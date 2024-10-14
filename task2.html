@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Lore Olympus Webtoon</title>
+    <style>
+      .blur {
+        filter: blur(5px);
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Start offscreen */
+        width: 250px;
+        height: 100%;
+        background-color: #4a4e69; /* Darker background */
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+
+      .sidebar.active {
+        left: 0; /* Slide in */
+      }
+
+      .character-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .character-details {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .character-card:hover .character-details {
+        opacity: 1;
+      }
+
+      .carousel div {
+        display: inline-block;
+        margin-right: 1rem;
+        width: 200px; /* Set a fixed width for the cards */
+        height: 300px; /* Set a fixed height for the cards */
+        overflow: hidden; /* Hide overflow */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for aesthetics */
+      }
+
+      .carousel img {
+        width: 100%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 200px; /* Set max height for images */
+        object-fit: cover; /* Cover the area without distorting the aspect ratio */
+      }
+
+      .sidebar a {
+        display: block;
+        color: white; /* Change link color to white */
+        text-decoration: none;
+        padding: 10px 0;
+      }
+
+      .sidebar a:hover {
+        text-decoration: underline;
+      }
+      .hover-link:hover {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-white shadow-md fixed w-full z-20">
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="flex items-center">
+          <button
+            id="toggleSidebar"
+            class="text-2xl text-gray-700 mr-4"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+          <a href="https://animemangatoon.com/category/featured/">Featured</a>
+          <a href="https://animemangatoon.com/category/popular-lists/"
+            >What to Watch</a
+          >
+          <a href="https://animemangatoon.com/category/latest-news-and-reviews/"
+            >Latest News and Reviews</a
+          >
+        </nav>
+        <div class="relative">
+          <input
+            type="text"
+            class="border rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            placeholder="Search..."
+          />
+          <i class="fas fa-search absolute left-3 top-3 text-gray-500"></i>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" role="complementary">
+      <nav>
+        <a href="https://animemangatoon.com/category/featured/">Featured</a>
+        <a href="https://animemangatoon.com/category/popular-lists/"
+          >What to Watch</a
+        >
+        <a href="https://animemangatoon.com/category/latest-news-and-reviews/"
+          >Latest News and Reviews</a
+        >
+        <a href="#" class="sidebar-link">Contact Us</a>
+        <a href="#" class="sidebar-link">Privacy Policy</a>
+        <a href="#" class="sidebar-link">About Us</a>
+        <a href="#" class="sidebar-link">Fact Checking Policy</a>
+        <a href="#" class="sidebar-link">Corrections Policy</a>
+        <a href="#" class="sidebar-link">Ethics Policy</a>
+        <a href="#" class="sidebar-link">DMCA Take Down Policy</a>
+        <a href="#" class="sidebar-link">Editorial Policy</a>
+        <a href="#" class="sidebar-link">Censorship Policy</a>
+        <a href="#" class="sidebar-link">Terms of Use</a>
+      </nav>
+    </aside>
+
+    <main class="pt-16">
+      <section
+        class="hero flex items-center justify-center text-white h-64 bg-cover bg-center"
+        style="
+          background-image: url('https://animemangatoon.com/wp-content/uploads/2024/05/lore-.png');
+        "
+      >
+        <div class="text-center hero-text bg-black bg-opacity-50 p-4 rounded">
+          <h1 class="text-5xl font-bold mb-4">Lore Olympus Webtoon</h1>
+          <p class="text-2xl">Jaw Dropping Seen on Media</p>
+        </div>
+      </section>
+
+      <section class="container mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Main Characters</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="character-card relative">
+            <img src="lore--1140x570.png" alt="Hades image" class="w-full" />
+            <div class="character-details">
+              <p>
+                Rachel Smith’s Lore Olympus webtoon is a modern retelling of the
+                ancient Greek myth of Hades and Persephone, which has taken the
+                digital comics world by storm. This article explores the complex
+                world of “Lore Olympus,” providing details on the Lore Olympus
+                characters, major themes, and the impact this beloved series has
+                on readers.
+              </p>
+            </div>
+          </div>
+          <div class="character-card relative">
+            <img src="img2.webp" alt="Persephone image" class="w-full" />
+            <div class="character-details">
+              <p>
+                Persephone, the goddess of spring, is the story’s heroine
+                alongside the underworld. Initially portrayed as an innocent and
+                naive young woman, her character develops dramatically as she
+                faces more challenges. Persephone is depicted with pink skin and
+                a generous heart, a stark contrast to the harsh reality of
+                Olympus. Her journey included discovering her strength and
+                dealing with the trauma of being raped by Apollo, as well as her
+                strong feelings about the underworld.
+              </p>
+            </div>
+          </div>
+          <div class="character-card relative">
+            <img src="Hades.webp" alt="Hades image" class="w-full" />
+            <div class="character-details">
+              <p>
+                In the Lore Olympus webtoon, Hades, the God of the underworld,
+                takes center stage. Often depicted as a handsome blue man in a
+                business suit, Hades runs the Underworld Corporation, serves as
+                the older brother of Zeus and Poseidon, and plays a role in the
+                Six Traitor Dynasty. His character takes on the burden of
+                leadership and pursuing personal interests. [Read Lore Olympus
+                Season 1 Review]
+              </p>
+            </div>
+          </div>
+          <div class="character-card relative">
+            <img src="Persephone.webp" alt="Persephone image" class="w-full" />
+            <div class="character-details">
+              <p>
+                Persephone, the goddess of spring, is the story’s heroine
+                alongside the underworld. Initially portrayed as an innocent and
+                naive young woman, her character develops dramatically as she
+                faces more challenges. Persephone is depicted with pink skin and
+                a generous heart, a stark contrast to the harsh reality of
+                Olympus. Her journey included discovering her strength and
+                dealing with the trauma of being raped by Apollo, as well as her
+                strong feelings about the underworld.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">
+            The 10 Best Supernatural Manhwa You Should Read Now
+          </h2>
+          <div class="carousel flex overflow-x-scroll">
+            <div class="bg-white rounded-lg shadow-md mx-4 p-4 flex-none">
+              <img
+                src="pjimage-12-4-e1720973001888-1140x570.jpg"
+                alt="Manhwa 1"
+                class="w-full"
+              />
+              <h3 class="text-xl font-bold">
+                1. Best Supernatural Manhwa – Leviathan
+              </h3>
+              <p>
+                The protagonist, Bota, and his family live on a small boat
+                because the water has risen and captured the dry lands. So, they
+                search for food and more from the underwater cities. Leviathan
+                follows the survival journey of the siblings Bota and Rita Ma
+                following the murder of their father at the hands of a sea
+                monster. Following a near-lethal encounter with a monster, Bota
+                and Rita are taken in by Kana, an acquaintance of Teon Ma, their
+                late father. Eventually, a tragic twist in the narrative, Bota,
+                Rita, and Kana find themselves battling for the survival of
+                humanity.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md mx-4 p-4 flex-none">
+              <img src="season-1-1.jpg" alt="Manhwa 2" class="w-full" />
+              <h3 class="text-xl font-bold">2. Tower of God</h3>
+              <p>
+                The Tower of God revolves around Twenty-Fifth Baam, who spends
+                most of his early life stuck beneath the titular tower. While
+                looking for his friend Rachel, he climbs the mysterious tower.
+                What he will discover in his quest to find his friend is also
+                beyond anything he could have imagined. Moreover, the more he
+                climbs, the more difficult it gets, as each floor offers him a
+                new obstacle that he has to overcome to keep climbing. Baam
+                needs to succeed in all these challenges to reach the peak of
+                the Tower eventually.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md mx-4 p-4 flex-none">
+              <img src="existance.jpg" alt="Manhwa 3" class="w-full" />
+              <h3 class="text-xl font-bold">3. Existance</h3>
+              <p>
+                Existence follows the central character Lee Jan-In, who has
+                experienced countless lives as a different species being before
+                being born as a human. With each life, he questions the
+                objective of his constant reincarnation. After being born as a
+                human with all the memories of his previous life, he understands
+                the purpose of his existence, and that is the extermination of
+                humanity. However, soon after experiencing the intricacies of
+                human life, he eventually begins to question the meaning of his
+                life.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md mx-4 p-4 flex-none">
+              <img src="season2.jpg" alt="Manhwa 3" class="w-full" />
+              <h3 class="text-xl font-bold">4. Leveling Up with the Gods</h3>
+              <p>
+                Leveling Up with the Gods is undoubtedly one of the best
+                supernatural manhwa. It centres on Kim Yuwon, who, after losing
+                the battle against the Outer Gods, is offered another
+                opportunity and sent back into the past. Now, back to the time
+                before the war, Yuwon has only one objective – to eventually
+                climb the Tower and become the strongest to avert the potential
+                destruction. If you liked Tower of God, you must read Leveling
+                Up With the Gods.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md mx-4 p-4 flex-none">
+              <img src="season2.jpg" alt="Manhwa 3" class="w-full" />
+              <h3 class="text-xl font-bold">3. Leveling Up with the Gods</h3>
+              <p>
+                Leveling Up with the Gods is undoubtedly one of the best
+                supernatural manhwa. It centres on Kim Yuwon, who, after losing
+                the battle against the Outer Gods, is offered another
+                opportunity and sent back into the past. Now, back to the time
+                before the war, Yuwon has only one objective – to eventually
+                climb the Tower and become the strongest to avert the potential
+                destruction. If you liked Tower of God, you must read Leveling
+                Up With the Gods.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md mx-4 p-4 flex-none">
+              <img src="season2.jpg" alt="Manhwa 3" class="w-full" />
+              <h3 class="text-xl font-bold">3. Leveling Up with the Gods</h3>
+              <p>
+                Leveling Up with the Gods is undoubtedly one of the best
+                supernatural manhwa. It centres on Kim Yuwon, who, after losing
+                the battle against the Outer Gods, is offered another
+                opportunity and sent back into the past. Now, back to the time
+                before the war, Yuwon has only one objective – to eventually
+                climb the Tower and become the strongest to avert the potential
+                destruction. If you liked Tower of God, you must read Leveling
+                Up With the Gods.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document
+        .getElementById("toggleSidebar")
+        .addEventListener("click", function () {
+          const sidebar = document.querySelector(".sidebar");
+          const main = document.querySelector("main");
+          sidebar.classList.toggle("active");
+          main.classList.toggle("blur");
+
+          // Update aria-expanded attribute
+          const isExpanded = sidebar.classList.contains("active");
+          this.setAttribute("aria-expanded", isExpanded);
+        });
+    </script>
+  </body>
+</html>
